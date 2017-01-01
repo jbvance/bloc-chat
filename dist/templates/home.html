@@ -1,1 +1,29 @@
-<h1>Home Page</h1>
+<div class="row-offcanvas row-offcanvas-left">
+  <div id="sidebar" class="sidebar-offcanvas">
+      <div class="col-md-12">
+        <h3>{{home.heading}}</h3>
+        <ul class="nav nav-pills nav-stacked">          
+          <li ng-repeat="room in chatRooms">
+              <a href="#">{{room.name}}</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div id="main">
+      <div class="col-md-12">
+      	  <p class="visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+          </p>          
+          <div class="row">
+              <div class="col-md-12"><div class="well"><p>Placeholder for chat content</p></div></div>
+          </div>
+          
+      </div>
+  </div>
+</div><!--/row-offcanvas -->
+  
+
+
+
+
+

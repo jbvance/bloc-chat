@@ -11,7 +11,7 @@
          $stateProvider                
             .state('home', {
                  url: '/',
-                 //controller: 'CollectionCtrl as collection',
+                 controller: 'HomeCtrl as home',
                  templateUrl: 'templates/home.html'
             });
         

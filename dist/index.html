@@ -2,12 +2,18 @@
 <html ng-app="blocChat">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloc Chat</title>
     <link rel="stylesheet" href="/styles/style.css">
+    
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+   
 </head>
 <body>    
     
-    <ui-view></ui-view>
+      <ui-view></ui-view>
     
     <!-- Angular -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>-->
@@ -22,6 +28,9 @@
     
     <!-- Angular UI-Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         
     
     <script>
@@ -36,5 +45,16 @@
       firebase.initializeApp(config);
     </script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/services/room.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script>
+        $(document).ready(function() {          
+            $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+    
 </body>
 </html>
+
