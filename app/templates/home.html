@@ -8,18 +8,31 @@
         </div>
         <ul class="nav nav-pills nav-stacked">          
           <li ng-repeat="room in chatRooms">
-              <a href="#">{{room.name}}</a>
+              <a href="#" ng-click="home.setRoom(room)">{{room.name}}</a>
           </li>
         </ul>
       </div>
   </div>
-  <div id="main">
+   <div id="main" ng-show="home.currentRoom != null">
       <div class="col-md-12">
       	  <p class="visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
           </p>          
           <div class="row">
-              <div class="col-md-12"><div class="well"><p>Placeholder for chat content</p></div></div>
+              <div class="col-md-12">
+                  <div class="well message-screen">
+                      <h2>{{home.currentRoom.name}}</h2> 
+                      <div class="separator"></div>
+                             <div ng-repeat="message in home.currentRoom.messages">
+                                 <div>
+                                     <span class="username">{{message.username}}</span>                                
+                                     <span class="timestamp">{{ message.sentAt | date:'hh:mm a' }}</span>                            
+                                 </div>
+                                 <div class="message-div">{{message.content}}</div>     
+                            </div>
+                                                                           
+                  </div>
+              </div>
           </div>
           
       </div>
