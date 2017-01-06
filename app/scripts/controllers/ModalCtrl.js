@@ -3,16 +3,18 @@
     function ModalCtrl($scope, $uibModalInstance, Room) {
         
         var mc = this;
-        mc.close = function () {
-            $uibModalInstance.close();
+        mc.close = function (value) {
+            $uibModalInstance.close(value);
+            console.log("Closing modal");
         };
         
-        mc.saveRoom = function () {
-            Room.addRoom(mc.roomName);
-            $uibModalInstance.close();
+        mc.closeCancel = function() {
+            console.log("Canceling");
+            $uibModalInstance.dismiss('cancel');
         };
-    
-                           
+        
+        
+                               
     }
  
     angular
