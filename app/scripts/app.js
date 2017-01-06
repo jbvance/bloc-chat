@@ -1,15 +1,14 @@
 (function () {
     
-    function config($stateProvider, $locationProvider) {
-        console.log("Configuring");
+    function config($stateProvider, $locationProvider) {       
          $locationProvider
             .html5Mode({
                 enabled: true,
                 requireBase: false
             });
          
-         $stateProvider                
-            .state('home', {
+         $stateProvider
+             .state('home', {
                  url: '/',
                  controller: 'HomeCtrl as home',
                  templateUrl: 'templates/home.html'
@@ -18,8 +17,6 @@
         
      }
      angular
-         .module('blocChat', ['ui.router', 'firebase'])
+         .module('blocChat', ['ui.router', 'firebase','ui.bootstrap'])
          .config(config);               
  })();
-console.log("Test");
-

@@ -18,7 +18,7 @@
     <!-- Angular -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>-->
     <!-- Use of 1.6.0 was throwing exception associated with UI-Router somehow, so reverted to older version of Angular -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
@@ -31,8 +31,10 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        
     
+    <!-- Bootstrap UI -->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
+            
     <script>
       // Initialize Firebase
       var config = {
@@ -47,6 +49,7 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/room.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/ModalCtrl.js"></script>
     <script>
         $(document).ready(function() {          
             $('[data-toggle=offcanvas]').click(function() {
