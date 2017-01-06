@@ -1,5 +1,5 @@
 (function () {
-    function HomeCtrl($scope, $uibModal, Room) {
+    function HomeCtrl($scope, $uibModal, Room, Message) {
         //Set the page heading
         this.heading = "Bloc Chat";
           
@@ -12,10 +12,16 @@
                 controller: 'ModalCtrl as mc'
             });
         };
+        
+        this.setRoom = function (room) {
+            this.currentRoom = room;
+            this.currentRoom.messages = Message.getByRoomId(room.$id);
+            console.log("Room Set");
+        };
                            
     }
  
     angular
          .module('blocChat')
-         .controller('HomeCtrl', ['$scope', '$uibModal', 'Room', HomeCtrl]);
+         .controller('HomeCtrl', ['$scope', '$uibModal', 'Room', 'Message', HomeCtrl]);
 })();
