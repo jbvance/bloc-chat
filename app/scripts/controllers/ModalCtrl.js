@@ -5,11 +5,9 @@
         var mc = this;
         mc.close = function (value) {
             $uibModalInstance.close(value);
-            console.log("Closing modal");
         };
         
         mc.closeCancel = function() {
-            console.log("Canceling");
             $uibModalInstance.dismiss('cancel');
         };
         
