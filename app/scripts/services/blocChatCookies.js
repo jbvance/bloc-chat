@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    function BlocChatCookies($cookies, $uibModal) {      
+    function BlocChatCookies($cookies, $uibModal) {           
         var currentUser = $cookies.get('blocChatCurrentUser');
         console.log("currentUser = " + currentUser);       
         if (!currentUser || currentUser === '') {
@@ -11,11 +11,18 @@
             }).result.then(function(newUser) {
                 console.log("User = " + newUser);
                 $cookies.put("blocChatCurrentUser", newUser);
+                currentUser = $cookies.get('blocChatCurrentUser');
             });
         }
+        
+        return {
+            user: currentUser
+            
+        };
     }
 
     angular
         .module('blocChat')
-        .run(['$cookies', '$uibModal', BlocChatCookies]);
+        .run(['$cookies', '$uibModal', BlocChatCookies])
+        .factory('BlocChatCookies', ['$cookies', '$uibModal', BlocChatCookies]);
 })();

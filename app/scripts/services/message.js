@@ -5,21 +5,12 @@
       
         return {
             all: messages,
-
-            addMessage: function(content, username, roomId){
-                if (content) {
-                    messages.$add(
-                        {
-                            username: username,
-                            content: content,
-                            sentAt: firebase.database.ServerValue.TIMESTAMP,
-                            roomId: roomId
-                        }                   
-
-                    );
-                }
+            
+            send: function (newMessage) {
+                messages.$add(newMessage);
+                
             },
-        
+
             getByRoomId: function (roomId) {         
                 return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
             }

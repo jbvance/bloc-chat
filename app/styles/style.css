@@ -63,6 +63,11 @@ body {
     margin: 0 auto;
 }
 
+.message-add{   
+    width:80%;
+    margin: 0 auto;
+}
+
 .username{
     font-weight: 800;
 }

@@ -31,10 +31,20 @@
                                  <div class="message-div">{{message.content}}</div>     
                             </div>
                                                                            
-                  </div>
+                  </div> 
+                  
+              </div>
+                   
               </div>
           </div>
-          
+        <div class="message-add">
+        <form ng-submit="home.addMessage()" class="input-group input-group-lg">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+            </span>
+            <input type="text" class="form-control" ng-model="home.newMessageContent" placeholder="Enter a new message..." required>
+            
+        </form>          
       </div>
   </div>
 </div><!--/row-offcanvas -->
